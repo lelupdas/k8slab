@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: mtdirpod
+  name: mtdirpod 
+spec:
+  containers:
+  - image: nginx
+    name: mtdirpod
+    volumeMounts:
+    - mountPath: /mtdir
+      name: mtdir-volume
+  volumes:
+    - name: mtdir-volume
+      emptyDir: {}
+
